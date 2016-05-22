@@ -1,0 +1,49 @@
+﻿@model IjpieSite.Models.RegisterViewModel
+@{
+    
+}
+
+    <h2>@ViewBag.Title</h2>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="header-info " style="position:relative; top:20px ">
+            <a class="scroll" href="#tech"><img src="/images/ijpiechip-612.png" z-index="1000" style="position: absolute; width:80px; top: 10px; left: 30px"></a>
+            <h8 style="position: absolute;top: 10px;left: 120px; color:black">Ijpie</h8>
+            <h7 style="position: absolute;top: 60px;left:40px; color:black ">Interminable Compute</h7>
+
+        </div>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <h3 style="position: absolute;left: 50%;top:25%">Sign Up</h3>
+        <div class="form-group" style="position: absolute;left: 40%;top: 35%;width: 80%;">
+
+            <div class="col-md-4">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+            </div>
+        </div>
+        <div class="form-group" style="position: absolute;left: 40%;top: 45%;width: 80%;">
+
+            <div class="col-md-4">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+            </div>
+        </div>
+        <div class="form-group" style="position: absolute;left: 40%;top: 55%;width: 80%;">
+
+            <div class="col-md-4">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+            </div>
+        </div>
+        <div class="form-group" style="position: absolute;left: 40%;top: 65%; width:45%">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" style="width:30%; background-color: #827BE6;" />
+            </div>
+        </div>
+    }
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

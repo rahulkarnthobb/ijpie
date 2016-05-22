@@ -1,0 +1,17 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Emulator config file set to C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Web.Azure\csx\Debug\roles\Ijepai.Web\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] DiagnosticsStoreRootPath set to: C:\Users\Bhawini\AppData\Local\dftmp\Resources\3e605c34-bc04-44c5-aa4d-df620da1e762
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Loading config file: C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Web.Azure\csx\Debug\roles\Ijepai.Web\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Config file to read: C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Web.Azure\csx\Debug\roles\Ijepai.Web\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Emulator config file set to C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Web.Azure\csx\Debug\roles\Ijepai.Web\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:55 AM] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:56 AM] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:56 AM] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:56 AM] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:56 AM] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:37:56 AM] Resetting DiagnosticPlugin
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:39:06 AM] DiagnosticsPlugin launched successfully with new configuration
+DiagnosticsPluginLauncher.exe Information: 0 : [2/5/2016 6:39:06 AM] DiagnosticPlugin exited with code 0

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Confirm Email";
+}
+<div class="header-info " style="position:relative; top:20px ">
+    <a class="scroll" href="#tech"><img src="/images/ijpiechip-612.png" z-index="1000" style="position: absolute; width:80px; top: 10px; left: 30px"></a>
+    <h8 style="position: absolute;top: 10px;left: 120px; color:black">Ijpie</h8>
+    <h7 style="position: absolute;top: 60px;left:40px; color:black ">Interminable Compute</h7>
+
+</div>
+
+<div>
+    <h2 style="position: absolute;top: 30%;left: 45%;">@ViewBag.Title.</h2>
+
+    <p style="position: absolute; top: 45%;left: 40%;">
+        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </p>
+</div>

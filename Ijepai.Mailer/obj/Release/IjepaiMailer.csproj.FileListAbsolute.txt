@@ -1,0 +1,4 @@
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\bin\Release\IjepaiMailer.dll
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\bin\Release\IjepaiMailer.pdb
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\obj\Release\IjepaiMailer.dll
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\obj\Release\IjepaiMailer.pdb

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Compute Interminable | IJPIE</title>
+    <link href="/content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <style type="text/css">@@import url("content/style.css");</style>
+    <link href="/content/style.css" rel="stylesheet" type="text/css" media="all" />
+    @*<link href="/content/site.css" rel="stylesheet" type="text/css" media="all" />*@
+
+    <link href="/content/globals.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    <link rel='icon' type='image/x-icon' href='favicon.ico' />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Virtual Machine Labs , Virtual Machine, Public Cloud, Virtual Labs, Ijpie, Scheduled Labs, " />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/swipebox.css">
+    <script src="/Scripts/jquery.swipebox.min.js"></script>
+    <script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+    </script>
+    <!------ Eng Light Box ------>
+    <!-- Script for gallery Here -->
+    <script type="text/javascript" src="/Scripts/jquery.mixitup.min.js"></script>
+    <script type="text/javascript">
+					$(function () {
+
+						var filterList = {
+
+							init: function () {
+
+								// MixItUp plugin
+								// http://mixitup.io
+								$('#portfoliolist').mixitup({
+									targetSelector: '.portfolio',
+									filterSelector: '.filter',
+									effects: ['fade'],
+									easing: 'snap',
+									// call the hover effect
+									onMixEnd: filterList.hoverEffect()
+								});
+
+							},
+
+							hoverEffect: function () {
+
+								// Simple parallax effect
+								$('#portfoliolist .portfolio').hover(
+									function () {
+										$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+										$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+									},
+									function () {
+										$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+										$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+									}
+								);
+
+							}
+
+						};
+
+						// Run the show!
+						filterList.init();
+
+
+					});
+    </script>
+    <script type="text/javascript" src="/Scripts/move-top.js"></script>
+    <script type="text/javascript" src="/Scripts/easing.js"></script>
+    <script type="text/javascript" src="/Scripts/DetailView.js"></script>
+    <script type="text/javascript" src="/Scripts/Dashboard.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+    </script>
+    <!---css-style-switecher----->
+    <script type="text/javascript" src="/Scripts/jsapi"></script>
+    <script>
+		google.setOnLoadCallback(function()
+			{
+			    // Color changer
+			    $(".colorblue").click(function(){
+			        $("link").attr("href", "css/blue.css");
+			        return false;
+			    });
+
+			    $(".colorrose").click(function(){
+			        $("link").attr("href", "css/rose.css");
+			        return false;
+			    });
+
+			    $(".colorgreen").click(function(){
+			        $("link").attr("href", "css/green.css");
+			        return false;
+			    });
+
+			});
+    </script>
+    <!---//End-css-style-switecher----->
+    @RenderSection("styles", required: false)
+</head>
+
+<body>
+    <div class="header" id="topmenu">
+       
+        <div class="top-menu">
+            <ul>
+                <li><a class="scroll" href="/">Home</a></li>
+                <li><a href="/Technology">Tech</a></li>
+                <li><a href="/Setup">Setup</a></li>
+                <li><a href="/Manifesto">Manifesto</a></li>
+                <li><a href="/Team">Team</a></li>
+                <li><a class="scroll" href="#contact">Contact</a></li>
+                <li id="dashboardLink">
+                    <a class="active scroll" href="/Dashboard">Dashboard</a>
+                    <ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        <li title="Dashboard"><a href="/Dashboard">Dashboard</a></li>
+                        }
+                        else {
+                        <li title="Create an account"><a href="/Account/Register">Sign Up</a></li>
+                        }
+                        @{
+                            var title = "Login";
+                            if (User.Identity.IsAuthenticated) { title = "Logout"; }
+                        }
+                        <li title="@Html.Raw(title)">@if (User.Identity.IsAuthenticated)
+                         {
+                            using (Html.BeginForm("LogOff", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login_form", role = "form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                                    <a href="#" class="fa fa-sign-out"><input type="submit" value="Log Out" class="btn btn-default" id="logOffBtn" style="color: white;"/></a>
+                            }
+                        } else
+                        {
+                            <a href="/Account/Login" class="fa fa-sign-out">Sign In</a>
+                        }
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+        
+    
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+    @RenderSection("pagescripts", required: false)
+    <script src="/Scripts/scripts.js"></script>
+    
+</body>
+</html>

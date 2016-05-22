@@ -1,0 +1,426 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+@import url("../css/bootstrap.css");
+@import url("../css/swipebox.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+body{
+	padding:0;
+	margin:0;
+	font-family: 'Open Sans', sans-serif;
+	background:#f8f7f7;
+}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+input[type="button"],input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;			   
+}	
+p{
+	margin:0;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+}
+/*-----start-header----*/
+.top-menu ul li a.active {
+	border-bottom:3px solid #e37579;	
+}
+.top-menu ul li a:hover {
+	border-bottom:3px solid #e37579;	
+}
+.service-icon-heading h4 {
+	color:#e37579;
+}
+i.event {
+	background: url('../images/img-sprite.png') no-repeat 0px -60px;
+}
+i.needs {
+	background: url('../images/img-sprite.png') no-repeat -60px -60px;
+}
+i.gender {
+	background: url('../images/img-sprite.png') no-repeat -120px -60px;
+}
+i.photo {
+	background: url('../images/img-sprite.png') no-repeat -180px -60px;
+}
+i.education {
+	background: url('../images/img-sprite.png') no-repeat -240px -60px;
+}
+i.project {
+	background: url('../images/img-sprite.png') no-repeat -300px -60px;
+}
+.projects-section-head h3,.contact-section-head h3 {
+	background: url('../images/head_down_rose.png') no-repeat 670px 55px;
+	padding-bottom: 2em;
+}
+.pricing-section-head h3,.services-section-head h3,.blog-section-head h3,.our-team-head h3{
+	background: url('../images/head_down_rose.png') no-repeat 450px 55px;
+	padding-bottom: 2em;
+}
+.blog-section-grid {
+	padding: 0 10px;
+}
+#filters li span{
+	color: #e37579;
+	border:1px solid #e37579;
+}
+#filters li span.active {
+	background: #e37579;
+	color: #fff;
+}
+#filters li span.filter:hover{
+	background: #e37579;
+	color: #fff;
+}  
+i.volunteer {
+	background: url('../images/img-sprite.png') no-repeat -360px -100px;
+}
+i.idea {
+	background: url('../images/img-sprite.png') no-repeat -460px -100px;
+}
+i.projects {
+	background: url('../images/img-sprite.png') no-repeat -560px -100px;
+}
+i.work {
+	background: url('../images/img-sprite.png') no-repeat -660px -100px;
+}
+i.abt_facebook:hover{
+	background-position:-760px -50px;
+}
+i.abt_twitter:hover{
+	background-position:-785px -50px;
+}
+i.abt_googlepluse:hover{
+	background-position:-810px -50px;
+}
+i.abt_linkedin:hover{
+	background-position:-835px -50px;
+}
+.subscribe input[type="text"] {
+	color: #fff;
+	border:1px solid #fff;
+}
+.subscribe input[type="submit"] {
+	color: #303030;
+	background: #fff;
+}
+.subscribe {
+	background: url('../images/subscribe_bg_rose.jpg') no-repeat 0px 0px;
+}
+.pricing-section-grid {
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	padding: 5em 0 2em 0;
+	width: 22%;
+}
+.pricing-section-grid:hover{
+	border:1px solid  #e37579;
+}
+.pricing-section-grid:hover h4.change {
+	color:#e37579;
+}
+.pricing-section-grid a {
+	background:#e37579;
+	color:#fff;
+	text-decoration:none;
+}
+.price {
+	background:#e37579;
+	border:4px solid #e8e8e8;
+}
+.blog-section-grid  h4{
+	color:#303030;
+}
+.date {
+	background:#0c0b0c;
+}
+.about-grid h5 {
+	color: #e37579;
+}
+.blog-section-grid a {
+	color: #e37579;
+}
+.date p {
+	color:#fff;
+}
+.contact-section {
+	background:#fff;
+	border-bottom:2px solid #eee;
+}
+.contact-form input[type="submit"] {
+	background: #e37579;
+	border-bottom:2px solid #b94c4f;
+}
+.contact-form input[type="submit"]:hover {
+	background:#b94c4f;
+}
+.footer-bottom {
+	background:#e37579;
+}
+.footer-top {
+	background:#b54a54;
+}
+i.f_phone {
+	background: url('../images/img-sprite.png') no-repeat -860px 0px;
+}
+i.f_msg {
+	width:25px;
+	height:25px;
+	background: url('../images/img-sprite.png') no-repeat -885px 0px;
+	display: inline-block;
+	vertical-align:middle;
+}
+i.f_location {
+	background: url('../images/img-sprite.png') no-repeat -910px 0px;
+}
+.social-icons {
+	background:#e37579;
+}
+.social-icons i {
+	background: url('../images/img-sprite.png') no-repeat 0px 0px;
+}
+i.f_facebook {
+	background-position: -935px 0px;
+}
+i.f_twitter{
+	background-position: -965px 0px;
+}
+i.f_youtube {
+	background-position: -995px 0px;
+}
+i.f_linkedin {
+	background-position: -1025px 0px;
+}
+i.f_pinterest {
+	background-position: -1055px 0px;
+}
+i.f_behance{
+	background-position: -1085px 0px;
+}
+i.f_googlepluse {
+	background-position: -1115px 0px;
+}
+i.f_rss {
+	background-position: -1145px 0px;
+}
+i.f_tumbler{
+	background-position: -1175px 0px;
+}
+i.f_instagram {
+	background-position: -1205px 0px;
+}
+i.f_dribble {
+	background-position: -1235px 0px;
+}
+i.f_mail {
+	background-position: -1270px 0px;
+}
+/*-- responsive-design starts-here --*/
+
+@media screen and (max-width: 1440px) {
+	.contact-section-head h3,.projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 590px 55px;
+	}
+}
+@media screen and (max-width: 1366px) { 
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 541px 50px;
+		padding-bottom: 1.2em;
+	}
+	.services-section-head h3,.our-team-head h3,.pricing-section-head h3,.blog-section-head h3 {
+		padding-bottom: 1.2em;
+		background: url('../images/head_down_rose.png') no-repeat 450px 50px;
+	}
+}
+@media screen and (max-width: 1280px) { 
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 1.1em;
+		background: url('../images/head_down_rose.png') no-repeat 450px 45px;
+		font-size: 2em;
+	}
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 503px 43px;
+		font-size: 2em;
+		padding-bottom: 1.1em;
+	}
+}
+@media screen and (max-width: 1024px) { 
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 382px 39px;
+		font-size: 1.9em;
+		padding-bottom: 1em;
+	}
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 1em;
+		background: url('../images/head_down_rose.png') no-repeat 349px 41px;
+		font-size: 1.9em;
+	}
+	.top-menu ul li a:hover {
+		border-bottom: 2px solid #e37579;
+	}
+	.top-menu ul li a.active {
+		border-bottom: 2px solid #e37579;
+	}
+}
+@media screen and (max-width: 800px) { 
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 260px 37px;
+		font-size: 1.75em;
+		padding-bottom: 0.9em;
+	}
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 0.9em;
+		background: url('../images/head_down_rose.png') no-repeat 238px 36px;
+		font-size: 1.75em;
+	}
+}
+@media screen and (max-width: 640px) { 
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 1em;
+		background: url('../images/head_down_rose.png') no-repeat 177px 34px;
+		font-size: 1.7em;
+	}
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 190px 34px;
+		font-size: 1.7em;
+		padding-bottom: 1em;
+	}
+	.our-team-grid {
+		margin-top: 2em;
+		padding: 0 5px;
+	}
+}
+@media screen and (max-width: 480px) { 		
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 0.85em;
+		background: url('../images/head_down_rose.png') no-repeat 135px 30px;
+		font-size: 1.5em;
+		background-size: 160px;
+	}
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 148px 31px;
+		font-size: 1.5em;
+		padding-bottom: 0.9em;
+		background-size: 160px;
+	}
+	.pricing-section-grid {
+		margin: 12% 2.5% 0;
+		width: 45%;
+		padding: 4.3em 0 2em 0;
+	}
+	i.event {
+		width: 48px;
+		height: 48px;
+		background: url('../images/img-sprite.png') no-repeat 1px -44px;
+		display: inline-block;
+		background-size: 1000px;
+	}
+	i.needs {
+		width: 48px;
+		height: 48px;
+		background: url('../images/img-sprite.png') no-repeat -45px -45px;
+		display: inline-block;
+		background-size: 1000px;
+	}
+	i.gender {
+		width: 48px;
+		height: 48px;
+		background: url('../images/img-sprite.png') no-repeat -91px -44px;
+		display: inline-block;
+		background-size: 1000px;
+	}
+	i.photo {
+		width: 48px;
+		height: 48px;
+		background: url('../images/img-sprite.png') no-repeat -138px -44px;
+		display: inline-block;
+		background-size: 1000px;
+	}
+	i.education {
+		width: 48px;
+		height: 48px;
+		background: url('../images/img-sprite.png') no-repeat -183px -44px;
+		display: inline-block;
+		background-size: 1000px;
+	}
+	i.project {
+		width: 48px;
+		height: 48px;
+		background: url('../images/img-sprite.png') no-repeat -229px -44px;
+		display: inline-block;
+		background-size: 1000px;
+	}
+	.services-section-grid {
+		padding: 0 10px;
+	}
+}
+@media screen and (max-width: 320px) { 
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 78px 29px;
+		font-size: 1.4em;
+		padding-bottom: 0.8em;
+		background-size: 150px;
+	}
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 0.85em;
+		background: url('../images/head_down_rose.png') no-repeat 62px 29px;
+		font-size: 1.4em;
+		background-size: 150px;
+	}
+	.services-section-grid {
+		padding: 0;
+	}
+}
+@media screen and (max-width: 320px) { 
+	.contact-section-head h3, .projects-section-head h3 {
+		background: url('../images/head_down_rose.png') no-repeat 78px 29px;
+		font-size: 1.4em;
+		padding-bottom: 0.8em;
+		background-size: 150px;
+	}
+	.services-section-head h3, .our-team-head h3, .pricing-section-head h3, .blog-section-head h3 {
+		padding-bottom: 0.85em;
+		background: url('../images/head_down_rose.png') no-repeat 62px 29px;
+		font-size: 1.4em;
+		background-size: 150px;
+	}
+	.about-grid {
+		padding: 0;
+	}
+	.pricing-section-grid {
+		margin: 17% 1.5% 0;
+		width: 46%;
+		padding: 3.3em 0 1.5em 0;
+	}
+	.footer-grid {
+		width: 100%;
+		float: left;
+		margin-bottom: 1.5em;
+		padding: 0;
+	}
+}

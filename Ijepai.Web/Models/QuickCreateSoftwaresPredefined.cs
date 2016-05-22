@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace ijpie.Web.Models
+{
+    public class QuickCreateSoftwaresPredefined
+    {
+        public int ID { get; set; }
+
+        public int QuickCreateID { get; set; }
+        public virtual QuickCreateModel QuickCreate { get; set; }
+    }
+}

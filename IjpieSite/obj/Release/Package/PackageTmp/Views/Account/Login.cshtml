@@ -1,0 +1,62 @@
+﻿@using IjpieSite.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+<div class="header-info " style="position:relative; top:20px ">
+    <a class="scroll" href="#tech"><img src="/images/ijpiechip-612.png" z-index="1000" style="position: absolute; width:80px; top: 10px; left: 30px"></a>
+    <h8 style="position: absolute;top: 10px;left: 120px; color:black">Ijpie</h8>
+    <h7 style="position: absolute;top: 60px;left:40px; color:black ">Interminable Compute</h7>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login_form", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control_item", placeholder = "daniel@ijpie.com" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control_item", placeholder = "********" })
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+                <p>
+                    @*@Html.ActionLink("Register as a new user", "Register")*@
+                </p>
+                 @*@Enable this once you have account confirmation enabled for password reset functionality*@
+                    <p style="position: absolute;top: 90%;left: 44%;">
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>
+            }
+        </section>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+               
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+               
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<div class="checkbox">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>*@
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            @* @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl }) *@
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@section PageScripts {
+    <script type="text/javascript">
+        $("#loginForm").css("margin-top", ($(window).height() - $("#loginForm").height() - $(".header-info").height() - 20) / 2 + "px");
+    </script>
+}

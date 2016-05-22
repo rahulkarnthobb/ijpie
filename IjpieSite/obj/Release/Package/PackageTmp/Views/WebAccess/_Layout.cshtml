@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Vm on Browser | Ijpie </title>   
+ 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="~/Scripts/SparkView(RDP)_files/strings-en.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+       
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Ijpie Remote Vm"> 
+        <meta name="description" content="Remotely view and contrl your computer with RDP protocol">
+        <link rel="stylesheet" href="~/Scripts/SparkView(RDP)_files/hi5.css">
+        <link rel="stylesheet" href="~/Scripts/SparkView(RDP)_files/rdp.css">
+        <script type="text/javascript" src="~/Scripts/SparkView(RDP)_files/resource.js"></script>
+        <script type="text/javascript" src="~/Scripts/SparkView(RDP)_files/appcfg.js"></script>
+        <script type="text/javascript" src="~/Scripts/SparkView(RDP)_files/hi5_min.js"></script>
+        <script type="text/javascript" src="~/Scripts/SparkView(RDP)_files/rdp.page.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <style type="text/css">
+            .groupborder {
+                border: solid 1px #888;
+            }
+
+        </style>
+        
+</head>
+<body>
+
+    
+    <div style="overflow: hidden;
+    height: 1px;margin-top: -20px">
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+        <script src="~/Scripts/webaccess.js"></script>
+    </div>
+</body>
+</html>
+

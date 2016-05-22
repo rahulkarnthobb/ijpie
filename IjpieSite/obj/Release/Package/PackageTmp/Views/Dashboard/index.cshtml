@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "SelectMachine";
+}
+<div class="header-info " style="position:relative; top:20px ">
+    <a class="scroll" href="#tech"><img src="/images/ijpiechip-612.png" z-index="1000" style="position: absolute; width:80px; top: 10px; left: 30px"></a>
+    <h8 style="position: absolute;top: 10px;left: 120px; color:black">Ijpie</h8>
+    <h7 style="position: absolute;top: 60px;left:40px; color:black ">Interminable Compute</h7>
+
+</div>
+@section styles {
+<style>
+    :focus {
+        outline: none !important;
+    }
+    :hover {
+         text-decoration: none !important;
+    }
+    a:focus {
+         text-decoration: none;
+    }
+
+    :active {
+        outline: none !important;
+    }
+
+    a:active {
+        background: #ffffff !important;
+    }
+
+    h2 {
+        color: #039cf2;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    #machineSelectionWrapper {
+        border: 3px solid #039cf2;
+        border-radius: 10px;
+        padding: 0 10px;
+        width: 50%;
+        margin: 0 auto;   
+    }
+
+    #createMachineBtn {
+        text-align: center;
+        width: 75px;
+        height: 75px;
+        line-height: 71px;
+        border-radius: 75px;
+        display: block;
+        margin: 20px auto;
+        border: 2px solid #999;
+        cursor: pointer;
+    }
+
+    #createMachineBtn:hover {
+        background: #009cf2 none repeat scroll 0 0;
+        border-color: #046599;
+        color: #fff;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 1px 1px 7px rgba(0, 0, 0, 0.4), 2px 2px 2px #000 inset, -2px -2px 2px #000 inset, 2px -2px 2px #000 inset, -2px 2px 2px #000 inset;
+    }
+
+    #machineSelectionWrapper table {
+        width: 100%;
+    }
+
+        #machineSelectionWrapper table tr + tr {
+            border-top: 2px solid #ddd;
+        }
+
+        #machineSelectionWrapper table td {
+            width: 40%;
+            height: 120px;
+        }
+
+            #machineSelectionWrapper table td + td {
+                width: 30%;
+                text-align: center;
+            }
+
+            #machineSelectionWrapper table td + td a {
+                background: #f42301;
+                color: #fff;
+                display: block;
+                height: 30px;
+                width: 30px;
+                margin: 0 auto;
+                line-height: 20px;
+                border-radius: 30px;
+                border: 2px solid #f42301;
+            }
+
+            #machineSelectionWrapper table td a:hover {
+                text-decoration: none;
+                box-shadow: 1px 1px 1px #000 inset, -1px -1px 1px #000 inset, -1px 1px 1px #000 inset, 1px -1px 1px #000 inset, 2px 2px 4px #000;
+            }
+
+            #machineSelectionWrapper table td + td + td a {
+                background: #039cf2;
+                border: 2px solid #039cf2;
+            }
+
+    #selectedMachineType {
+        overflow: hidden;
+    }
+
+        #selectedMachineType span, #selectedOSType span, #userImageType span {
+            float: left;
+            line-height: 30px;
+            height: 30px;
+            color: #039cf2;
+            margin-right: 10px;
+        }
+
+        #selectedMachineType #selectedMachineLabel, #selectedOSType #selectedOSLabel, #userImageType #userImageLabel {
+            color: #444;
+            float: left;
+        }
+
+    optgroup {
+        padding: 5px 0;
+        margin-bottom: 5px;
+    }
+
+        optgroup + optgroup {
+            border-top: 1px solid #999;
+        }
+
+    select {
+        width: 70%;
+    }
+
+    #uploadImage {
+        margin: 0 auto;
+    }
+</style>
+}
+    
+    <div id="machineSelectionWrapper" style="position:absolute; top:20%; left:25%">
+        <form style="display: none" id="createMachineForm" name="createMachineForm">
+            <input id="machineCoreSize" name="machineCoreSize" type="hidden">
+            <input id="machineRamSize" name="machineRamSize" type="hidden">
+            <input id="machineOS" name="machineOS" type="hidden">
+        </form>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <b>Machine Size</b>
+                        <p id="machineSize"><span class="fa fa-desktop"></span><span style="color: #000">/</span></p>
+                    </td>
+                    <td colspan="2" style="position: relative;">
+                        <select id="macListSize">
+                            <option value="">Select Size</option>
+
+                        </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Operating System</b>
+                        <p id="selectedOSType"><span class="fa fa-windows"></span><span style="color: #000">/</span><span class="fa fa-linux"></span><span id="selectedOSLabel">Windows 10</span></p>
+                    </td>
+                    <td colspan="2" style="position: relative;">
+                        <select id="imgListSelectBox">
+                            <option value="">Select an Operating System</option>
+                           
+                        </select>
+                        <span class="fa fa-3x fa-spinner fa-pulse" style="position: absolute; right:15px; top: 35px; height: 50px; width: 50px; line-height: 51px; display: none;" id="imgListLoader"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Email Address</b>
+                    </td>
+                    <td colspan="2"><input type="email" value="" name="Email" id="EmailAddress" style="width:70% "  /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a id="createMachineBtn" href="#" style="top:80%; position:absolute; left:45%;">Create</a>
+   
+    <script type="text/javascript">
+    
+    var userName = '@HttpContext.Current.User.Identity.Name';
+
+        
+    </script>

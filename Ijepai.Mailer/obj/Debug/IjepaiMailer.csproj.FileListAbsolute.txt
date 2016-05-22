@@ -1,0 +1,10 @@
+C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Mailer\bin\Debug\IjepaiMailer.dll
+C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Mailer\bin\Debug\IjepaiMailer.pdb
+C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Mailer\obj\Debug\IjepaiMailer.dll
+C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Mailer\obj\Debug\IjepaiMailer.pdb
+C:\Users\Bhawini\Documents\GitHub\Ijepai-Poc\Ijepai.Mailer\obj\Debug\IjepaiMailer.csprojResolveAssemblyReference.cache
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\bin\Debug\IjepaiMailer.dll
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\bin\Debug\IjepaiMailer.pdb
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\obj\Debug\IjepaiMailer.csprojResolveAssemblyReference.cache
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\obj\Debug\IjepaiMailer.dll
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\Ijepai.Mailer\obj\Debug\IjepaiMailer.pdb
