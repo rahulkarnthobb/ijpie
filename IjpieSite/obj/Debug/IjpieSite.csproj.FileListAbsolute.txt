@@ -323,7 +323,6 @@ C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\Micros
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\obj\Debug\IjpieSite.csprojResolveAssemblyReference.cache
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\obj\Debug\IjpieSite.dll
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\obj\Debug\IjpieSite.pdb
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\System.Net.Http.Formatting.dll
@@ -365,3 +364,4 @@ C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\Script
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\bin\Scripts\SparkView(RDP)_files\view.png
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\obj\Debug\IjpieSite.Migrations.InitialMigrations.resources
 C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\obj\Debug\IjpieSite.csproj.GenerateResource.Cache
+C:\Users\Bhawini\Downloads\Ijepai-Poc\Ijepai-Poc\Ijepai-Poc\IjpieSite\obj\Debug\IjpieSite.csprojResolveAssemblyReference.cache

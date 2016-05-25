@@ -1,13 +1,13 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
+ Set padding to keep content from hitting the edges 
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -96,10 +96,10 @@ ul, ol, li {
 
 /****************************************  Theme  ************************************/
 
-body {
+/*body {
     padding-top: 40px !important;
     padding-bottom: 0px !important;
-}
+}*/
 
 #header{
     border-bottom: none;
@@ -328,7 +328,7 @@ body {
 /* QC Grid*/
 
 #QC-list tbody > tr {
-    border: 1px solid #fff;
+    border: 1px solid #999;
 }
 
 #QC-list tbody tr.open-subgrid {
@@ -684,7 +684,7 @@ body {
 
 
 /****************************************** Work arounds ************************************/
-#loginForm .form-group {
+/*#loginForm .form-group {
     overflow: hidden;
 }
 
@@ -703,7 +703,7 @@ body {
 
 #Login-Page .col-md-4 {
     padding-left: 0;
-}
+}*/
 
 #create-lab-form-content .form-group {
     overflow: hidden;

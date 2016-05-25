@@ -5,6 +5,7 @@
     <link href="/content/bootstrap.css" rel='stylesheet' type='text/css' />
     <style type="text/css">@@import url("content/style.css");</style>
     <link href="/content/style.css" rel="stylesheet" type="text/css" media="all" />
+    @*<link href="/content/site.css" rel="stylesheet" type="text/css" media="all" />*@
 
     <link href="/content/globals.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -74,6 +75,8 @@
     </script>
     <script type="text/javascript" src="/Scripts/move-top.js"></script>
     <script type="text/javascript" src="/Scripts/easing.js"></script>
+    <script type="text/javascript" src="/Scripts/DetailView.js"></script>
+    <script type="text/javascript" src="/Scripts/Dashboard.js"></script>
     <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){
@@ -126,6 +129,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                         <li title="Dashboard"><a href="/Dashboard">Dashboard</a></li>
+                        <li title="My Machine"><a href="/DetailView/Index">My Machines</a></li>
                         }
                         else {
                         <li title="Create an account"><a href="/Account/Register">Sign Up</a></li>
@@ -157,5 +161,6 @@
     @RenderSection("scripts", required: false)
     @RenderSection("pagescripts", required: false)
     <script src="/Scripts/scripts.js"></script>
+    
 </body>
 </html>

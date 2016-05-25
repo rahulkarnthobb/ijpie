@@ -64,29 +64,35 @@ $("#decreaseVMSize").on("click", function (e) {
 
     return false;
 });
+
 $("#createMachineBtn").on("click", function (e) {
-    var el = document.getElementById('macListSize');
-    var size = el.options[el.selectedIndex].innerHTML;
-    var OS = document.getElementById('imgListSelectBox');
-    var textOS = OS.options[OS.selectedIndex].innerHTML;
-    var OSname = OS.options[OS.selectedIndex].value;
-    var emailadd = document.getElementById('EmailAddress').value;
-    var add = emailadd.innerHTML;
-    var usrName = userName;
-    var vm = { Size: size, OS: textOS, user: usrName, email: emailadd, OSName: OSname };
-    $.ajax({
-        url: opt.apiUrl2 + "/VmCreate",
-        type: "get",
-        crossDomain: true,
-        data: vm,
-        dataType: 'jsonp',
-        contentType: "application/json;charset=utf-8",
-        success: function () {
 
-            window.location.href = '/Success/Index' // redirect to another page
+        var el = document.getElementById('macListSize');
+        var size = el.options[el.selectedIndex].innerHTML;
+        var OS = document.getElementById('imgListSelectBox');
+        var textOS = OS.options[OS.selectedIndex].innerHTML;
+        var OSname = OS.options[OS.selectedIndex].value;
+        var emailadd = document.getElementById('EmailAddress').value;
+        if (emailadd == "") {
+            emailadd = userName;
         }
+        //var add = emailadd.innerHTML;
+        var usrName = userName;
+        var vm = { Size: size, OS: textOS, user: usrName, email: emailadd, OSName: OSname };
+        $.ajax({
+            url: opt.apiUrl2 + "/VmCreate",
+            type: "get",
+            crossDomain: true,
+            data: vm,
+            dataType: 'jsonp',
+            contentType: "application/json;charset=utf-8",
+            success: function () {
 
-    });
+                window.location.href = '/DetailView/Index' // redirect to another page
+            }
+
+        });
+    
     e.preventDefault();
     return false;
 });

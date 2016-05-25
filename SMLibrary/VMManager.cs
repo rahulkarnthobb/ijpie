@@ -260,7 +260,8 @@ namespace SMLibrary
         {
             String requestID = String.Empty;
 
-            String deployment = await GetAzureDeploymentName(ServiceName);
+            //String deployment = await GetAzureDeploymentName(ServiceName);
+            String deployment =  GetAzureDeploymentName(ServiceName);
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roleInstances/{3}/Operations", _subscriptionid, ServiceName, deployment, RoleName);
 
             HttpClient http = GetHttpClient();
@@ -287,7 +288,8 @@ namespace SMLibrary
         {
             String requestID = String.Empty;
 
-            String deployment = await GetAzureDeploymentName(ServiceName);
+            //String deployment = await GetAzureDeploymentName(ServiceName);
+            String deployment = GetAzureDeploymentName(ServiceName);
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roleInstances/{3}/Operations", _subscriptionid, ServiceName, deployment, RoleName);
 
             HttpClient http = GetHttpClient();
@@ -317,7 +319,8 @@ namespace SMLibrary
         {
             String requestID = String.Empty;
 
-            String deployment = await GetAzureDeploymentName(ServiceName);
+            //String deployment = await GetAzureDeploymentName(ServiceName);
+            String deployment =  GetAzureDeploymentName(ServiceName);
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roleInstances/{3}/Operations", _subscriptionid, ServiceName, deployment, RoleName);
 
             HttpClient http = GetHttpClient();
@@ -414,7 +417,8 @@ namespace SMLibrary
 
         async public Task<XDocument> GetAzureVM(String ServiceName, String VMName)
         {
-            String deployment = await GetAzureDeploymentName(ServiceName);
+            //String deployment = await GetAzureDeploymentName(ServiceName);
+            String deployment = GetAzureDeploymentName(ServiceName);
             XDocument vmXML = new XDocument();
 
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}", _subscriptionid, ServiceName, deployment);
@@ -477,7 +481,8 @@ namespace SMLibrary
         {
             String requestID = String.Empty;
 
-            String deployment = await GetAzureDeploymentName(ServiceName);
+            //String deployment = await GetAzureDeploymentName(ServiceName);
+            String deployment = GetAzureDeploymentName(ServiceName);
 
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roles", _subscriptionid, ServiceName, deployment);
 
@@ -552,7 +557,8 @@ namespace SMLibrary
         {
             String requestID = String.Empty;
 
-            String deployment = await GetAzureDeploymentName(ServiceName);
+           // String deployment = await GetAzureDeploymentName(ServiceName);
+            String deployment = GetAzureDeploymentName(ServiceName);
 
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roles/{3}", _subscriptionid, ServiceName, deployment, VMName);
 
@@ -570,23 +576,24 @@ namespace SMLibrary
             return requestID;
         }
 
-        async public Task<HttpResponseMessage> DeleteDeployment(string serviceName)
+        public HttpResponseMessage DeleteDeployment(string serviceName)
         {
             string xml = string.Empty;
-            string deploymentName = await GetAzureDeploymentName(serviceName);
+           // string deploymentName = await GetAzureDeploymentName(serviceName);
+            string deploymentName = GetAzureDeploymentName(serviceName);
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}", _subscriptionid, deploymentName, deploymentName);
             HttpClient http = GetHttpClient();
-            HttpResponseMessage responseMessage = await http.DeleteAsync(uri);
+            HttpResponseMessage responseMessage = http.DeleteAsync(uri).Result;
             return responseMessage;
         }
 
-        async public Task<HttpResponseMessage> DeleteService(string serviceName)
+        public HttpResponseMessage DeleteService(string serviceName)
         {
             string xml = string.Empty;
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}", _subscriptionid, serviceName);
             //Log.Info("Windows Azure URI (http DELETE verb): " + uri, typeof(VMManager));
             HttpClient http = GetHttpClient();
-            HttpResponseMessage responseMessage = await http.DeleteAsync(uri);
+            HttpResponseMessage responseMessage = http.DeleteAsync(uri).Result;
             return responseMessage;
         } 
 
@@ -596,7 +603,7 @@ namespace SMLibrary
 
             // as a convention here in this post, a unified name used for service, deployment and VM instance to make it easy to manage VMs           
             HttpClient http = GetHttpClient();
-            HttpResponseMessage responseMessage = await DeleteDeployment(ServiceName);
+            HttpResponseMessage responseMessage = DeleteDeployment(ServiceName);
 
             if (responseMessage != null)
             {
@@ -606,7 +613,7 @@ namespace SMLibrary
                 if (result.Status == OperationStatus.Succeeded)
                 {
                     responseString = result.Message;
-                    HttpResponseMessage sResponseMessage = await DeleteService(ServiceName);
+                    HttpResponseMessage sResponseMessage = DeleteService(ServiceName);
                     if (sResponseMessage != null)
                     {
                         OperationResult sResult = await PollGetOperationStatus(requestID, 5, 120);
@@ -619,7 +626,38 @@ namespace SMLibrary
                 }
             }
             return responseString;
-        } 
+        }
+
+        public string DeleteQCV(string ServiceName)
+        {
+            string responseString = string.Empty;
+
+            // as a convention here in this post, a unified name used for service, deployment and VM instance to make it easy to manage VMs           
+            HttpClient http = GetHttpClient();
+            HttpResponseMessage responseMessage = DeleteDeployment(ServiceName);
+
+            if (responseMessage != null)
+            {
+
+                string requestID = responseMessage.Headers.GetValues("x-ms-request-id").FirstOrDefault();
+                OperationResult result = PollOperationStatus(requestID, 5, 120);
+                if (result.Status == OperationStatus.Succeeded)
+                {
+                    responseString = result.Message;
+                    HttpResponseMessage sResponseMessage = DeleteService(ServiceName);
+                    if (sResponseMessage != null)
+                    {
+                        OperationResult sResult = PollOperationStatus(requestID, 5, 120);
+                        responseString += sResult.Message;
+                    }
+                }
+                else
+                {
+                    responseString = result.Message;
+                }
+            }
+            return responseString;
+        }
 
         public void DeleteRoleInstance(string roleInstanceNames, string cloudServiceName)
         {
@@ -667,7 +705,8 @@ namespace SMLibrary
         
         async public Task<byte[]> GetRDPFile(String ServiceName, String vmName)
         {
-            String deploymentName = await GetAzureDeploymentName(ServiceName);
+           // String deploymentName = await GetAzureDeploymentName(ServiceName);
+            String deploymentName = GetAzureDeploymentName(ServiceName);
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roleinstances/{3}/ModelFile?FileType=RDP", _subscriptionid, ServiceName, deploymentName, vmName);
             byte[] RDPFile = null;
 
@@ -732,20 +771,27 @@ namespace SMLibrary
             }
         }
 
-        async private Task<String> GetAzureDeploymentName(String ServiceName)
+         private String GetAzureDeploymentName(String ServiceName)
         {
             String uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deploymentslots/{2}", _subscriptionid, ServiceName, "Production");
             String DeploymentName = String.Empty;
 
             HttpClient http = GetHttpClient();
 
-            Stream responseStream = await http.GetStreamAsync(uri);
+            try {
+                Stream responseStream = http.GetStreamAsync(uri).Result;
 
-            if (responseStream != null)
+                if (responseStream != null)
+                {
+                    XDocument xml = XDocument.Load(responseStream);
+                    var name = xml.Root.Element(ns + "Name");
+                    DeploymentName = name.Value;
+                }
+            }
+            catch(Exception E)
             {
-                XDocument xml = XDocument.Load(responseStream);
-                var name = xml.Root.Element(ns + "Name");
-                DeploymentName = name.Value;
+                string msg = E.InnerException.ToString();
+
             }
 
             return DeploymentName;
@@ -943,6 +989,64 @@ namespace SMLibrary
             while (!done)
             {
                 XElement operation = await GetOperationStatus(requestId);
+                result.RunningTime = DateTime.UtcNow - beginPollTime;
+                try
+                {
+                    // Turn the Status string into an OperationStatus value
+                    result.Status = (OperationStatus)Enum.Parse(
+                        typeof(OperationStatus),
+                        operation.Element(ns + "Status").Value);
+                }
+                catch (Exception)
+                {
+                    throw new ApplicationException(string.Format(
+                        "Get Operation Status {0} returned unexpected status: {1}{2}",
+                        requestId,
+                        Environment.NewLine,
+                        operation.ToString(SaveOptions.OmitDuplicateNamespaces)));
+                }
+
+                switch (result.Status)
+                {
+                    case OperationStatus.InProgress:
+                        Thread.Sleep((int)pollInterval.TotalMilliseconds);
+                        break;
+
+                    case OperationStatus.Failed:
+                        result.StatusCode = (HttpStatusCode)Convert.ToInt32(
+                            operation.Element(ns + "HttpStatusCode").Value);
+                        XElement error = operation.Element(ns + "Error");
+                        result.Code = error.Element(ns + "Code").Value;
+                        result.Message = error.Element(ns + "Message").Value;
+                        done = true;
+                        break;
+
+                    case OperationStatus.Succeeded:
+                        result.StatusCode = (HttpStatusCode)Convert.ToInt32(
+                            operation.Element(ns + "HttpStatusCode").Value);
+                        done = true;
+                        break;
+                }
+
+                if (!done && DateTime.UtcNow > endPollTime)
+                {
+                    result.Status = OperationStatus.TimedOut;
+                    done = true;
+                }
+            }
+            return result;
+        }
+
+        public OperationResult PollOperationStatus(string requestId, int pollIntervalSeconds, int timeoutSeconds)
+        {
+            OperationResult result = new OperationResult();
+            DateTime beginPollTime = DateTime.UtcNow;
+            TimeSpan pollInterval = new TimeSpan(0, 0, pollIntervalSeconds);
+            DateTime endPollTime = beginPollTime + new TimeSpan(0, 0, timeoutSeconds);
+            bool done = false;
+            while (!done)
+            {
+                XElement operation = GetOperationStatus(requestId).Result;
                 result.RunningTime = DateTime.UtcNow - beginPollTime;
                 try
                 {

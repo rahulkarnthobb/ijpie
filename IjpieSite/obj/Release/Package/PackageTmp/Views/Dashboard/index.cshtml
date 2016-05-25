@@ -172,7 +172,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <b>Email Address</b>
+                        <b>Email Address (Optional: If provided LInk will be sent here else link goes to User)</b>
                     </td>
                     <td colspan="2"><input type="email" value="" name="Email" id="EmailAddress" style="width:70% "  /></td>
                 </tr>
@@ -182,8 +182,5 @@
     <a id="createMachineBtn" href="#" style="top:80%; position:absolute; left:45%;">Create</a>
    
     <script type="text/javascript">
-    
-    var userName = '@HttpContext.Current.User.Identity.Name';
-
-        
+        var userName = '@HttpContext.Current.User.Identity.Name';
     </script>

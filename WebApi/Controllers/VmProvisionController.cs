@@ -80,7 +80,6 @@ namespace WebApi.Controllers
         {
             return GetDetail();
         }
-
         // GET: api/VmProvision
        
 
@@ -90,10 +89,69 @@ namespace WebApi.Controllers
             ApplicationDbContext db = new ApplicationDbContext();
             var QCVM = new JsonResult();
             var name = Request.GetQueryNameValuePairs();
-            string User = name.ElementAt(1).Value;
+            string User = name.ElementAt(1).Key;
             QCVM.Data = db.QuickCreates.Where(l =>l.ApplicationUserID == User).ToList();
             QCVM.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+
             return QCVM;
+        }
+
+        // POST: api/VmProvision
+        public void Post([FromBody]string value)
+        {
+
+
+        }
+
+        // PUT: api/VmProvision/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE: api/VmProvision/6
+        public void Delete(int id)
+        {
+        }
+    }
+
+    public class VmDeleteController : ApiController
+    {
+
+
+        // GET: api/VmProvision
+        public bool Get()
+        {
+            return Delete();
+        }
+        // GET: api/VmProvision
+
+
+        public static Dictionary<string, string> imageList { get; set; }
+        private bool Delete()
+        {
+            VMManager vmm = new VMManager(ConfigurationManager.AppSettings["SubcriptionID"], ConfigurationManager.AppSettings["CertificateThumbprint"]);
+            ApplicationDbContext db = new ApplicationDbContext();
+            var name = Request.GetQueryNameValuePairs();
+            int id = Int32.Parse(name.ElementAt(0).Key);
+            var cloudService = db.QuickCreates.Where(l => l.ID == id).FirstOrDefault();
+            try
+            {
+                string res = vmm.DeleteQCV(cloudService.ServiceName);
+            }
+            catch (Exception e)
+            {
+                // string message = e.InnerException.ToString();
+                db.QuickCreates.Remove(cloudService);
+                db.SaveChanges();
+
+            }
+            if (cloudService != null)
+            {
+                db.QuickCreates.Remove(cloudService);
+                db.SaveChanges();
+            }
+            return true;
+
         }
 
         // POST: api/VmProvision

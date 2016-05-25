@@ -496,6 +496,7 @@
     <Content Include="Views\WebAccess\Index.cshtml" />
     <Content Include="Views\Account\RegistrationConfirmed.cshtml" />
     <Content Include="Views\Success\Index.cshtml" />
+    <Content Include="Views\DetailView\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
